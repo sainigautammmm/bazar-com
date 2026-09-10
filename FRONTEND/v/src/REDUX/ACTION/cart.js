@@ -53,7 +53,7 @@ export const addtocartaction =
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/cart/addtocart",
+        "https://bazar-com-4.onrender.com/api/cart/addtocart",
         {
           productId: productId,
           productQuantity: productQuantity,

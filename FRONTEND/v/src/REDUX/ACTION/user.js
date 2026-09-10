@@ -6,7 +6,7 @@ export const registerUseraction = (formData, navigate) => async (dispatch) => {
   dispatch({ type: REGISTER_USER_REQUEST });
   try {
     const response = await axios.post(
-      "http://localhost:8000/register_user",
+      "https://bazar-com-4.onrender.com/register_user",
       formData
     );
 
@@ -31,7 +31,7 @@ export const verifyOtpaction = (formData, navigate) => async (dispatch) => {
   dispatch({ type: VERIFY_USER_REQUEST });
   try {
     const response = await axios.post(
-      "http://localhost:8000/verify-otp",
+      "https://bazar-com-4.onrender.com/verify-otp",
       formData
     );
 
@@ -61,7 +61,7 @@ export const verifyOtpaction = (formData, navigate) => async (dispatch) => {
    dispatch({type:LOGIN_USER_REQUEST});
 
     try {
-             const response = await axios.post("http://localhost:8000/login",formData);
+             const response = await axios.post("https://bazar-com-4.onrender.com/login",formData);
              
              if (response.data.sucess) {
             console.log(response.data.Data)
@@ -90,7 +90,7 @@ export const userAuthenticationaction = ()=>  async(dispatch)=>
      
    
     try {
-        const response = await axios.get("http://localhost:8000/user-auth");
+        const response = await axios.get("https://bazar-com-4.onrender.com/user-auth");
 
         if (response.data.sucess) {
              dispatch({type:USER_AUTH_SUCESS,payload:{
@@ -112,7 +112,7 @@ export const logoutuseraction =  (navigate)=>   async  (dispatch)=>{
        dispatch({type:LOGOUT_USER_REQUEST})
 
   try {
-      const response = await axios.get("http://localhost:8000/logout",);
+      const response = await axios.get("https://bazar-com-4.onrender.com/logout",);
 
      if(response.data.sucess){
       dispatch({type:LOGOUT_USER_SUCESS,payload: response.data.message});

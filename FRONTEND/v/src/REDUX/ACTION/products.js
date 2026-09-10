@@ -7,7 +7,7 @@ export const fetchproductaction = () => async (dispatch) => {
   dispatch({ type: FETCH_PRODUCT_REQUEST });
   
   try {
-    const response = await axios.get("http://localhost:8000/api/products/all-products");
+    const response = await axios.get("https://bazar-com-4.onrender.com/api/products/all-products");
 
     console.log(response.data); // Debugging the response to ensure the structure is correct
     
