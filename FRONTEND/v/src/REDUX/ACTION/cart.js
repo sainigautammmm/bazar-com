@@ -1,39 +1,3 @@
-// // actions/cart.js
-// import axios from "axios";
-// import { ADD_TO_CART_REQUEST, ADD_TO_CART_SUCCESS, ADD_TO_CART_FAILURE ,CLEAR_CART_SUCCESS,CLEAR_CART_FAILURE} from "../Constant/constants";
-
-// export const addtocartaction = (productId, productquantity, productprice,productthumbnail) => async (dispatch) => {
-//   dispatch({ type: ADD_TO_CART_REQUEST });
-//   console.log(productId, productquantity, productprice,productthumbnail);
-//   try {
-//     const response = await axios.post("http://localhost:8000/api/cart/addtocart", {
-//       productid: productId.toString(),
-//       productquantity: productquantity,
-//       productprice: productprice,
-//       productthumbnail:productthumbnail,
-//     });
-//     console.log(response);
-  
-//     if (response.data.success) {
-//       dispatch({
-//         type: ADD_TO_CART_SUCCESS,
-//         payload: response.data.cartitem,
-//       });
-//     } else {
-//       throw new Error("Unexpected response format");
-//     }
-//   } catch (error) {
-    
-//     const message = error.response?.data?.message || "An error occurred while adding to cart.";
-//     dispatch({ type: ADD_TO_CART_FAILURE, payload: message });
-//   }
-  
-// };
-
-
-
-
-
 
 import axios from "axios";
 
@@ -88,7 +52,7 @@ export const addtocartaction =
 export const fetchcartaction = () => async (dispatch) => {
   try {
     const response = await axios.get(
-      "http://localhost:8000/api/cart"
+      "https://bazar-com-4.onrender.com/api/cart"
     );
 
     console.log("CART DATA:", response.data);
@@ -111,7 +75,7 @@ export const fetchcartaction = () => async (dispatch) => {
 export const removefromcartaction = (id) => async (dispatch) => {
   try {
     const response = await axios.delete(
-      `http://localhost:8000/api/cart/${id}`
+      `https://bazar-com-4.onrender.com/api/cart/${id}`
     );
 
     console.log("REMOVE CART RESPONSE:", response.data);
