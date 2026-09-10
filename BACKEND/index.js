@@ -18,7 +18,7 @@ connectDatabase();
 server.use(cookieParser());
 // Middleware
 server.use(cors({
-  origin: "http://localhost:5173", // Your frontend URL
+  origin: "https://bazar-com.vercel.app", // Your frontend URL
   credentials: true, // Enable credentials for CORS
 }));
 
